@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.neosoft.springbootpoc.entity.Employee;
 import com.neosoft.springbootpoc.entity.User;
 
 @RestController
@@ -19,14 +20,11 @@ public class InMemoryController {
 	}
 
 	@GetMapping("/getUsers")
-	public List<User> getUsers() {
+	public List<Employee> getUsers() {
 
-		/*
-		 * return Stream .of(new User(1, "shubham", "shubham@gmail.com", 324324), new
-		 * User(2, "rohit", "rohit@gmail.com", 54345)) .collect(Collectors.toList());
-		 */
+		
 
-		return Stream.of(new User(1, "shubham", "Deshmukh", 23), new User(2, "rohit", "kulkarni", 34))
-				.collect(Collectors.toList());
+		return Stream.of(new Employee(1, "shubham", "sd@gmail.com", 783738292),
+				new Employee(2, "rohit", "rohit@gmail.com", 5345234)).collect(Collectors.toList());
 	}
 }
